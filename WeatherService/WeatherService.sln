@@ -22,6 +22,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceC.Presentation.Web",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceC.Shared.Contracts", "ServiceC.Shared.Contracts\ServiceC.Shared.Contracts.csproj", "{2A27C102-C1DE-4A32-ADF7-8657B155077B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceA", "ServiceA", "{145FD4EA-3D6B-4854-B92F-3902EF0DFE0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceA.WorkerWeatherCollector", "ServiceA.WorkerWeatherCollector\ServiceA.WorkerWeatherCollector.csproj", "{09D7BA53-ED30-4FA3-AC1A-8A489585A9D4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +42,7 @@ Global
 		{CFB07C23-30E5-424B-A3A9-FF46AF871E2C} = {20799096-D1BC-4551-9223-C88D773906C4}
 		{F33951BE-39E4-41D7-A263-53A5E25616F6} = {253C4305-BCFC-446C-8C33-87B3942AE89F}
 		{2A27C102-C1DE-4A32-ADF7-8657B155077B} = {03D1ADE0-0F8B-4317-9430-47617164EC63}
+		{09D7BA53-ED30-4FA3-AC1A-8A489585A9D4} = {145FD4EA-3D6B-4854-B92F-3902EF0DFE0B}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{3D865DE9-9FAC-40F6-A987-6933301D8EAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -64,5 +69,9 @@ Global
 		{2A27C102-C1DE-4A32-ADF7-8657B155077B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A27C102-C1DE-4A32-ADF7-8657B155077B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A27C102-C1DE-4A32-ADF7-8657B155077B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09D7BA53-ED30-4FA3-AC1A-8A489585A9D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09D7BA53-ED30-4FA3-AC1A-8A489585A9D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09D7BA53-ED30-4FA3-AC1A-8A489585A9D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09D7BA53-ED30-4FA3-AC1A-8A489585A9D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
