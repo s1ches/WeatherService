@@ -1,5 +1,5 @@
-﻿using ServiceA.WorkerWeatherCollector.Interfaces;
-using ServiceA.WorkerWeatherCollector.Models;
+﻿using Common.WeatherCommon.Models;
+using ServiceA.WorkerWeatherCollector.Interfaces;
 using ServiceA.WorkerWeatherCollector.Serializers;
 
 namespace ServiceA.WorkerWeatherCollector.Workers;

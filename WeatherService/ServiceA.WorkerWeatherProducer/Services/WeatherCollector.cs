@@ -1,7 +1,7 @@
 ﻿using System.Runtime.Serialization;
 using System.Text.Json;
+using Common.WeatherCommon.Models;
 using ServiceA.WorkerWeatherCollector.Interfaces;
-using ServiceA.WorkerWeatherCollector.Models;
 
 namespace ServiceA.WorkerWeatherCollector.Services;
 

@@ -1,4 +1,4 @@
-﻿using ServiceA.WorkerWeatherCollector.Models;
+﻿using Common.WeatherCommon.Models;
 
 namespace ServiceA.WorkerWeatherCollector.Interfaces;
 

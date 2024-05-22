@@ -1,5 +1,5 @@
-﻿using Confluent.Kafka;
-using ServiceA.WorkerWeatherCollector.Models;
+﻿using Common.WeatherCommon.Models;
+using Confluent.Kafka;
 
 namespace ServiceA.WorkerWeatherCollector.Services;
 
