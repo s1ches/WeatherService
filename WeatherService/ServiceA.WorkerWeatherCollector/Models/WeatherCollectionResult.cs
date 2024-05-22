@@ -21,7 +21,6 @@ public class WeatherCollectionResult
     
     [JsonPropertyName("IsDayTime")]
     public bool IsDayTime { get; set; }
-    
-    [JsonIgnore]
-    public double? TemperatureInCelsius { get; set; }
+
+    public double? TemperatureInCelsius;
 }
