@@ -1,7 +1,7 @@
 using System.Reflection;
 using ServiceC.Core.Application;
+using ServiceC.Infrastructure.Grpc.Services;
 using ServiceC.Infrastructure.Persistence;
-using ServiceC.Infrastructure.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;
@@ -17,7 +17,7 @@ builder.Services.AddSwaggerGen(opt =>
 
 builder.Services.AddPersistenceLayer(configuration);
 builder.Services.AddApplicationLayer();
-builder.Services.AddServicesLayer();
+builder.Services.AddGrpc();
 
 var app = builder.Build();
 
@@ -27,6 +27,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.MapGrpcService<WeatherInteractionService>();
 
 app.UseHttpsRedirection();
 

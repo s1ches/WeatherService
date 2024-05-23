@@ -12,6 +12,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Grpc.AspNetCore" Version="2.60.0" />
         <PackageReference Include="MediatR" Version="12.2.0" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.4">
           <PrivateAssets>all</PrivateAssets>
@@ -27,8 +28,8 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\ServiceC.Infrastructure.Grpc\ServiceC.Infrastructure.Grpc.csproj" />
       <ProjectReference Include="..\ServiceC.Infrastructure.Persistence\ServiceC.Infrastructure.Persistence.csproj" />
-      <ProjectReference Include="..\ServiceC.Infrastructure.Services\ServiceC.Infrastructure.Services.csproj" />
       <ProjectReference Include="..\ServiceC.Shared.Contracts\ServiceC.Shared.Contracts.csproj" />
     </ItemGroup>
 

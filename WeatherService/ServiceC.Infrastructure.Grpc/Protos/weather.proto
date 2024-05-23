@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option csharp_namespace = "ServiceC";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/empty.proto";
+
+package weather;
+
+message SetWeatherRequest{
+  google.protobuf.Timestamp LocalObservationDateTime = 1;
+  string WeatherText = 2;
+  google.protobuf.Int32Value WeatherIcon = 3;
+  bool HasPrecipitation = 4;
+  google.protobuf.StringValue PrecipitationType = 5;
+  bool IsDayTime = 6;
+  google.protobuf.DoubleValue TemperatureInCelsius = 7;
+}
+
+service WeatherInteraction {
+  rpc SetWeather (SetWeatherRequest) returns (google.protobuf.Empty);
+}
