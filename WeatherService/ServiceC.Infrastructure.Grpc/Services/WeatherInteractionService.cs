@@ -17,7 +17,9 @@ public class WeatherInteractionService(IWeatherDbContext dbContext) : WeatherInt
             EditDate = DateTime.UtcNow,
             IsDayTime = request.IsDayTime,
             LocalObservationDateTime = request.LocalObservationDateTime.ToDateTime().ToUniversalTime(),
-            PrecipitationType = (PrecipitationType)Enum.Parse(typeof(PrecipitationType), request.PrecipitationType),
+            PrecipitationType = request.PrecipitationType is null 
+                ? null
+                : (PrecipitationType)Enum.Parse(typeof(PrecipitationType), request.PrecipitationType),
             TemperatureInCelsius = request.TemperatureInCelsius,
             WeatherText = request.WeatherText,
             WeatherType = request.WeatherIcon is null

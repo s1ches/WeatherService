@@ -1,4 +1,5 @@
-﻿using Common.WeatherCommon.Models;
+﻿using System.Text.Json;
+using Common.WeatherCommon.Models;
 using ServiceA.WorkerWeatherCollector.Interfaces;
 using ServiceA.WorkerWeatherCollector.Serializers;
 
