@@ -1,3 +1,14 @@
+# 1.0.1
+
+## Commit: <a href="https://github.com/s1ches/WeatherService/commit/413188b27c51a20c933de4a6d0aa075f5342b8c3">#413188b</a>
+
+### Fix:
+  - Change Kafka Messages Serialization and Deserialization, now using ProtobufSerializer and Deserializer
+### Refactoring:
+  - Removed SolutionFolders for ServiceA, ServiceB and Common
+  - ServiceA and ServiceB in Solution Folder Workers
+  - Add Common Project for Workers for Kafka Messages models
+
 # 1.0.0
 
 ## Commit: <a href="https://github.com/s1ches/WeatherService/commit/545e354a6781032b3f257240bc520829e69cc587">#545e354</a>
