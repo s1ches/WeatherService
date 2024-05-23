@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace ServiceA.WorkerWeatherCollector.Models;
+namespace Common.WeatherCommon.Models;
 
 public class WeatherCollectionResult
 {
