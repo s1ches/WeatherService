@@ -43,7 +43,7 @@ Infrastructure layer for realization service and interfaces/abstraction which ne
 
 ![image](https://github.com/s1ches/WeatherService/assets/121990701/dcc300ae-fd1d-4f36-b33e-694e54527096)
 
-- ServiceA - worker which works with Hangfire and collect data from external api by Cron every minute and then produce it to Kafka
+- ServiceA - worker which works with Hangfire and collect data from external api by Cron every minute and then produce it to Kafka<br/>
   ![image](https://github.com/s1ches/WeatherService/assets/121990701/fe68a263-6013-4f00-82a7-8c3fcda30bba)
 - ServiceB - worker which constantly works and consumes messages from Kafka, on every message ServiceB send gRPC request to a WeatherInteractionService to add data in Database<br/>
   ![image](https://github.com/s1ches/WeatherService/assets/121990701/d398ab79-29c6-497a-a57e-23ccbf144eb2)
