@@ -5,6 +5,7 @@ using ServiceC.Core.Domain.Entities;
 using ServiceC.Core.Domain.Enums;
 using Enum = System.Enum;
 
+
 namespace ServiceC.Infrastructure.Grpc.Services;
 
 public class WeatherInteractionService(IWeatherDbContext dbContext) : WeatherInteraction.WeatherInteractionBase

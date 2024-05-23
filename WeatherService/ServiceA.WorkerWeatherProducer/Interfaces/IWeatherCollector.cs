@@ -1,8 +1,8 @@
-﻿using Common.WeatherCommon.Models;
+﻿using ServiceC;
 
 namespace ServiceA.WorkerWeatherCollector.Interfaces;
 
 public interface IWeatherCollector
 { 
-    Task<WeatherCollectionResult?> CollectWeatherAsync(int cityKey);
+    Task<SetWeatherRequest?> CollectWeatherAsync(int cityKey);
 }

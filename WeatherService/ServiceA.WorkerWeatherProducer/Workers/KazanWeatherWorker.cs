@@ -1,13 +1,11 @@
-﻿using System.Text.Json;
-using Common.WeatherCommon.Models;
-using ServiceA.WorkerWeatherCollector.Interfaces;
-using ServiceA.WorkerWeatherCollector.Serializers;
+﻿using ServiceA.WorkerWeatherCollector.Interfaces;
+using ServiceC;
 
 namespace ServiceA.WorkerWeatherCollector.Workers;
 
 public class KazanWeatherWorker(
     IWeatherCollector weatherCollector,
-    IProducer<WeatherCollectionResult, BaseSerializer<WeatherCollectionResult>> producer,
+    IProducer<SetWeatherRequest> producer,
     IConfiguration configuration,
     ILogger<IWeatherCollector> logger) : IWorker
 {

@@ -1,6 +1,5 @@
 ﻿using Hangfire;
 using Hangfire.PostgreSql;
-using ServiceA.WorkerWeatherCollector.Workers;
 
 namespace ServiceA.WorkerWeatherCollector.Configuration;
 
