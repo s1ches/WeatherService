@@ -1,3 +1,15 @@
+# 1.0.0
+
+## Commit: <a href="https://github.com/s1ches/WeatherService/commit/545e354a6781032b3f257240bc520829e69cc587">#545e354</a>
+
+### Features:
+  - Create ServiceB
+  - Realize Messages Consuming from ApacheKafka
+  - Realize GrpcServer in ServiceA which Add new Weather Record to Db 
+  - Realize GrpcClient which send requests to a GrpcServer(ServiceA)
+### Refactoring
+  - Created Common Solution Folder for storing the common models for ServiceB and ServiceA
+
 # 0.0.3
 
 ## Commit: <a href="https://github.com/s1ches/WeatherService/commit/33ae20028d3f8896a92be38117b8fb25c04f890b">#33ae200</a>
