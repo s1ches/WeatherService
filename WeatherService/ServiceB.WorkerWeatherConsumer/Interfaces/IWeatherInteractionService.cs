@@ -1,5 +1,4 @@
-﻿using Common.WeatherCommon.Models;
-using ServiceC;
+﻿using ServiceC;
 
 namespace ServiceB.WorkerWeatherConsumer.Interfaces;
 

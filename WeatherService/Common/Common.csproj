@@ -7,11 +7,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\ServiceC.Core.Application\ServiceC.Core.Application.csproj"/>
+        <Protobuf Include="Protos\weather.proto" GrpcServices="Client" />
     </ItemGroup>
-
+    
     <ItemGroup>
-        <PackageReference Include="Grpc.AspNetCore" Version="2.60.0"/>
+      <PackageReference Include="Google.Protobuf" Version="3.26.0" />
+      <PackageReference Include="Grpc.AspNetCore" Version="2.60.0" />
     </ItemGroup>
 
 </Project>

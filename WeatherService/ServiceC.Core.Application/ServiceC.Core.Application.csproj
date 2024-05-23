@@ -7,6 +7,12 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <Protobuf Include="Protos\weather.proto" GrpcServices="Server" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <PackageReference Include="Google.Protobuf" Version="3.26.0" />
+      <PackageReference Include="Grpc.AspNetCore" Version="2.60.0" />
       <PackageReference Include="MediatR" Version="12.2.0" />
       <PackageReference Include="MediatR.Contracts" Version="2.0.1" />
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.4" />

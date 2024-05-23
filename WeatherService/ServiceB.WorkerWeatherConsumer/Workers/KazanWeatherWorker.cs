@@ -1,7 +1,6 @@
-﻿using Common.WeatherCommon.Models;
-using Confluent.Kafka;
-using Google.Protobuf.WellKnownTypes;
-using ServiceB.WorkerWeatherConsumer.Deserializers;
+﻿using Confluent.Kafka;
+using Confluent.Kafka.SyncOverAsync;
+using Confluent.SchemaRegistry.Serdes;
 using ServiceB.WorkerWeatherConsumer.Interfaces;
 using ServiceC;
 
@@ -24,8 +23,8 @@ public class KazanWeatherWorker(
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
-        using var consumer = new ConsumerBuilder<Null, WeatherCollectionResult>(_config)
-            .SetValueDeserializer(new BaseDeserializer<WeatherCollectionResult>())
+        using var consumer = new ConsumerBuilder<Null, SetWeatherRequest>(_config)
+            .SetValueDeserializer(new ProtobufDeserializer<SetWeatherRequest>().AsSyncOverAsync())
             .Build();
 
         consumer.Subscribe(TopicName);
@@ -49,20 +48,7 @@ public class KazanWeatherWorker(
                     $"Successful consume result:" +
                     $" {result.Message.Value.TemperatureInCelsius} at {DateTime.UtcNow}");
 
-                var request = new SetWeatherRequest
-                {
-                    IsDayTime = result.Message.Value.IsDayTime,
-                    LocalObservationDateTime = result.Message.Value.LocalObservationDateTime
-                        .ToUniversalTime()
-                        .ToTimestamp(),
-                    HasPrecipitation = result.Message.Value.HasPrecipitation,
-                    PrecipitationType = result.Message.Value.PrecipitationType,
-                    TemperatureInCelsius = result.Message.Value.TemperatureInCelsius,
-                    WeatherIcon = result.Message.Value.WeatherIcon,
-                    WeatherText = result.Message.Value.WeatherText
-                };
-
-                await weatherInteractionService.SetWeather(request, stoppingToken);
+                await weatherInteractionService.SetWeather(result.Message.Value, stoppingToken);
             }
             catch (ConsumeException exception)
             {

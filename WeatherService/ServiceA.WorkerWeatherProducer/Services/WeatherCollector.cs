@@ -1,7 +1,9 @@
 ﻿using System.Runtime.Serialization;
 using System.Text.Json;
-using Common.WeatherCommon.Models;
+using Google.Protobuf.WellKnownTypes;
 using ServiceA.WorkerWeatherCollector.Interfaces;
+using ServiceA.WorkerWeatherCollector.Models;
+using ServiceC;
 
 namespace ServiceA.WorkerWeatherCollector.Services;
 
@@ -11,7 +13,7 @@ public class WeatherCollector(IConfiguration configuration, HttpClient client) :
 
     private readonly string _weatherResourceUrl = configuration["WeatherApiConfig:WeatherResourceUrl"]!;
     
-    public async Task<WeatherCollectionResult?> CollectWeatherAsync(int cityKey)
+    public async Task<SetWeatherRequest?> CollectWeatherAsync(int cityKey)
     {
         var requestUri = $"{_weatherResourceUrl}{cityKey}?apikey={_apiKey}&language=ru-RU&details=false";
         var response = await client.GetStringAsync(requestUri);
@@ -27,7 +29,18 @@ public class WeatherCollector(IConfiguration configuration, HttpClient client) :
                 .GetProperty("Metric")
                 .GetProperty("Value")
                 .GetDouble();
-
-        return weather;
+        
+        return new SetWeatherRequest
+        {
+            IsDayTime = weather.IsDayTime,
+            LocalObservationDateTime = weather.LocalObservationDateTime
+                .ToUniversalTime()
+                .ToTimestamp(),
+            HasPrecipitation = weather.HasPrecipitation,
+            PrecipitationType = weather.PrecipitationType,
+            TemperatureInCelsius = weather.TemperatureInCelsius,
+            WeatherIcon = weather.WeatherIcon,
+            WeatherText = weather.WeatherText            
+        };
     }
 }
